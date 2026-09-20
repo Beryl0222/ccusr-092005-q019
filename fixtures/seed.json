@@ -1,0 +1,7 @@
+{
+  "project": "医者荣誉遴选资料",
+  "records": [
+    {"id": "candidate-team-105", "kind": "candidate", "candidate_type": "团队", "category": "金牌团队奖", "nominator": "行业学会"},
+    {"id": "evidence-service-88", "kind": "evidence", "candidate_id": "candidate-team-105", "evidence_type": "临床服务记录", "verification_state": "pending"}
+  ]
+}
