@@ -1,7 +1,139 @@
 {
   "project": "医者荣誉遴选资料",
+  "editionId": "edition-2027",
   "records": [
-    {"id": "candidate-team-105", "kind": "candidate", "candidate_type": "团队", "category": "金牌团队奖", "nominator": "行业学会"},
-    {"id": "evidence-service-88", "kind": "evidence", "candidate_id": "candidate-team-105", "evidence_type": "临床服务记录", "verification_state": "pending"}
+    {
+      "id": "rules-2027",
+      "kind": "rules",
+      "version": "2027.1",
+      "rules": {
+        "categories": [
+          {"id": "cat-personal", "name": "个人技术奖", "quota": 1},
+          {"id": "cat-team", "name": "团队项目奖", "quota": 1},
+          {"id": "cat-service", "name": "社会服务奖", "quota": 1}
+        ],
+        "rounds": [
+          {"id": "r-professional", "name": "专业评议轮", "stage": "professional_review", "eligibleCategories": ["cat-personal", "cat-team"]},
+          {"id": "r-final", "name": "社会责任终审轮", "stage": "social_responsibility_review", "eligibleCategories": ["cat-service"]}
+        ],
+        "scoreRange": {"min": 0, "max": 100},
+        "deadlines": {
+          "nomination": "2027-03-01T00:00:00Z",
+          "supplements": "2027-04-15T00:00:00Z"
+        }
+      }
+    },
+    {"id": "nom-central", "kind": "nominator", "name": "市第一中心医院", "type": "hospital"},
+    {"id": "nom-clinic", "kind": "nominator", "name": "城东社区医疗联盟", "type": "community"},
+    {"id": "nom-society", "kind": "nominator", "name": "省医师协会", "type": "society"},
+
+    {
+      "id": "cand-wang-tech",
+      "kind": "candidate",
+      "nominatorId": "nom-central",
+      "rawName": "王崇安",
+      "affiliation": "市第一中心医院神经内科",
+      "candidateType": "person",
+      "categoryId": "cat-personal",
+      "deedsSummary": "主导卒中急救绿色通道再造，溶栓到针时间中位值缩短至38分钟。",
+      "contributionNote": "个人技术条目：路径设计与关键操作由王崇安完成。"
+    },
+    {
+      "id": "cand-wang-service",
+      "kind": "candidate",
+      "nominatorId": "nom-clinic",
+      "rawName": "王崇安",
+      "affiliation": "城东社区医疗联盟（义诊）",
+      "candidateType": "person",
+      "categoryId": "cat-service",
+      "deedsSummary": "三年间坚持社区义诊与慢病随访，服务居民2600余人次。",
+      "contributionNote": "社会服务条目：义诊组织与随访由王崇安利用业余时间完成。"
+    },
+    {
+      "id": "cand-team-105",
+      "kind": "candidate",
+      "nominatorId": "nom-society",
+      "rawName": "心脑血管联合救治团队",
+      "affiliation": "市第一中心医院",
+      "candidateType": "team",
+      "categoryId": "cat-team",
+      "deedsSummary": "多学科联合救治团队，显著提升急危重症协同处置能力。",
+      "contributionNote": "团队条目：王崇安负责急救路径，团队其余成员承担护理、影像与康复环节。"
+    },
+    {
+      "id": "cand-li",
+      "kind": "candidate",
+      "nominatorId": "nom-clinic",
+      "rawName": "李沐晴",
+      "affiliation": "城东社区医疗联盟",
+      "candidateType": "person",
+      "categoryId": "cat-personal",
+      "deedsSummary": "基层腹腔镜技术推广人，带教社区医师17名。",
+      "contributionNote": ""
+    },
+
+    {
+      "id": "ev-tech-wang",
+      "kind": "evidence",
+      "candidateId": "cand-wang-tech",
+      "evidenceKind": "技术成果鉴定",
+      "source": "省卫生健康委技术鉴定中心",
+      "title": "卒中绿色通道技术成果鉴定书",
+      "contentHash": "sha256:9f2c4a7b1d8e6f30a5b7c9d2e4f6081a3c5d7e9b2d4f6081a3c5e7b9d1f3052"
+    },
+    {
+      "id": "evidence-service-88",
+      "kind": "evidence",
+      "candidateId": "cand-team-105",
+      "evidence_type": "临床服务记录",
+      "evidenceKind": "临床服务记录",
+      "source": "市第一中心医院病案统计室",
+      "title": "联合救治团队年度服务记录",
+      "contentHash": "sha256:1a2b3c4d5e6f70819203a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f9",
+      "verification_state": "pending"
+    },
+    {
+      "id": "ev-service-wang",
+      "kind": "evidence",
+      "candidateId": "cand-wang-service",
+      "evidenceKind": "服务台账",
+      "source": "城东社区卫生服务中心",
+      "title": "社区义诊签到与随访台账",
+      "contentHash": "sha256:2b3c4d5e6f70819203a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f90a1"
+    },
+    {
+      "id": "ev-li-teaching",
+      "kind": "evidence",
+      "candidateId": "cand-li",
+      "evidenceKind": "带教证明",
+      "source": "城东社区医疗联盟培训部",
+      "title": "社区医师带教名册与考核记录",
+      "contentHash": "sha256:3c4d5e6f70819203a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f90a1b2"
+    },
+    {
+      "id": "ev-team-supplement",
+      "kind": "evidence",
+      "candidateId": "cand-team-105",
+      "kindTag": "supplement",
+      "evidenceKind": "补充数据",
+      "source": "市第一中心医院医务处",
+      "title": "联合救治团队年度质控补充数据",
+      "contentHash": "sha256:4d5e6f70819203a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f90a1b2c3"
+    },
+
+    {
+      "id": "work-stroke-path",
+      "kind": "sharedWork",
+      "title": "卒中急救绿色通道",
+      "candidateIds": ["cand-wang-tech", "cand-team-105"],
+      "contributions": {
+        "cand-wang-tech": "路径再造方案与溶栓操作规范的主要设计者",
+        "cand-team-105": "护理、影像、急诊多学科协同落地"
+      }
+    },
+
+    {"id": "judge-chen", "kind": "judge", "name": "陈述", "organization": "省医学会"},
+    {"id": "judge-zhao", "kind": "judge", "name": "赵宁", "organization": "省医院协会"},
+    {"id": "judge-sun", "kind": "judge", "name": "孙岚", "organization": "高校公共卫生学院"}
   ]
 }
